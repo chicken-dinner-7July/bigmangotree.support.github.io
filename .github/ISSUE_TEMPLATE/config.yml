@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📚 Quickstart & Docs
+    url: https://bigmangotree.github.io/docs/Quickstart.html
+    about: Please read the Quickstart and Troubleshooting before filing an issue.
+  - name: 🧾 Troubleshooting
+    url: https://bigmangotree.github.io/docs/Troubleshooting.html
+    about: Common errors and fixes.
+  - name: ✉️ Email Support (fallback)
+    url: mailto:support@bigmangotree.com
+    about: If you cannot use GitHub Issues.

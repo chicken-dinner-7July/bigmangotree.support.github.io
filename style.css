@@ -1,0 +1,63 @@
+nav {
+  background: #ff6600;
+  padding: 10px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f0f8ff;
+  padding: 50px;
+}
+h1 {
+  color: #ff6600;
+}
+
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+
+.projects-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.projects-list li {
+  margin: 8px 0;
+}
+
+
+.contact-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.projects-list li {
+  margin: 8px 0;
+}
+
+.logo {
+  width: 120px;       /* resize logo */
+  height: auto;       /* keep proportions */
+  display: block;     /* treat like block element */
+  margin: 0 auto 20px auto;  /* center logo */
+}
+
+.logo {
+  width: 150px;          /* size of logo */
+  height: 150px;         /* keep it square */
+  border-radius: 50%;    /* makes it a perfect circle */
+  object-fit: cover;     /* crop/fit inside the circle */
+  display: block;
+  margin: 0 auto 20px auto; /* center it */
+  border: 3px solid #ff6600; /* optional border */
+}

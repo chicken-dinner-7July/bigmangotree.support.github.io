@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📚 Quickstart & Docs
+    url: https://your-site-or-repo/docs/Quickstart.md
+    about: Please read the Quickstart and Troubleshooting before filing an issue.
+  - name: 🧾 Troubleshooting
+    url: https://your-site-or-repo/docs/Troubleshooting.md
+    about: Common errors and fixes.
+  - name: ✉️ Email Support (fallback)
+    url: mailto:support@yourdomain.com
+    about: If you cannot use GitHub Issues.

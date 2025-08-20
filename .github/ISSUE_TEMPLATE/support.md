@@ -1,3 +1,11 @@
+---
+name: Support request
+about: Ask for help with BigMangoTree CI/CD Turnkey Products
+title: "[Support] "
+labels: support
+assignees: ""
+---
+
 # Support – BigMangoTree CI/CD Turnkey Products
 
 These products are sold as **community-support only**. No one-to-one setup or consulting is included.

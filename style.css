@@ -61,3 +61,9 @@ nav a:hover {
   margin: 0 auto 20px auto; /* center it */
   border: 3px solid #ff6600; /* optional border */
 }
+
+.no-bullets {
+  list-style-type: none;   /* removes the bullet */
+  padding-left: 0;         /* optional: removes the left indent */
+  margin-left: 0;          /* optional: removes margin in some browsers */
+}

@@ -1,0 +1,29 @@
+name: Issue Notifications
+
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+jobs:
+  email-notification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Email for New Issue or Comment
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "GitHub Issue Update: ${{ github.event.issue.title }}"
+          body: |
+            Repository: ${{ github.repository }}
+            Issue: ${{ github.event.issue.title }}
+            Author: ${{ github.event.sender.login }}
+            Link: ${{ github.event.issue.html_url }}
+
+            ${{ github.event.comment.body || 'New issue created' }}
+          to: bigmangotree777@gmail.com
+          from: GitHub Issue Bot <bigmangotree777@gmail.com>

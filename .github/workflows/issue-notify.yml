@@ -1,8 +1,12 @@
 name: Issue Notifications
 
 on:
+  # Manual test button in the Actions tab
+  workflow_dispatch:
+  # Fire when a new issue is opened
   issues:
     types: [opened]
+  # Fire when a new comment is added to any issue
   issue_comment:
     types: [created]
 
@@ -10,20 +14,29 @@ jobs:
   email-notification:
     runs-on: ubuntu-latest
     steps:
-      - name: Send Email for New Issue or Comment
+      - name: Send Email (new issue or comment)
         uses: dawidd6/action-send-mail@v3
         with:
+          # Gmail SMTP
           server_address: smtp.gmail.com
           server_port: 465
+          secure: true
           username: ${{ secrets.SMTP_USERNAME }}
           password: ${{ secrets.SMTP_PASSWORD }}
-          subject: "GitHub Issue Update: ${{ github.event.issue.title }}"
+
+          subject: >
+            [${{ github.repository }}] Issue update: ${{ github.event.issue.title }}
+
           body: |
             Repository: ${{ github.repository }}
-            Issue: ${{ github.event.issue.title }}
-            Author: ${{ github.event.sender.login }}
-            Link: ${{ github.event.issue.html_url }}
+            Action: ${{ github.event.action }}
+            Actor: ${{ github.event.sender.login }}
 
-            ${{ github.event.comment.body || 'New issue created' }}
-          to: bigmangotree777@gmail.com
-          from: GitHub Issue Bot <bigmangotree777@gmail.com>
+            Issue: #${{ github.event.issue.number }} — ${{ github.event.issue.title }}
+            Link:  ${{ github.event.issue.html_url }}
+
+            --------
+            ${{ github.event.comment.body || 'New issue opened.' }}
+
+          to: ${{ secrets.TO_EMAIL }}
+          from: GitHub Issue Bot <${{ secrets.SMTP_USERNAME }}>
